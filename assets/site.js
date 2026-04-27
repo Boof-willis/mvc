@@ -30,10 +30,7 @@
         if (navBar) {
             var ticking = false;
             var update = function () {
-                var isMobileNav = window.matchMedia
-                    ? window.matchMedia('(max-width: 520px)').matches
-                    : window.innerWidth <= 520;
-                var isScrolled = window.pageYOffset > (isMobileNav ? 1 : 80);
+                var isScrolled = window.pageYOffset > 80;
                 navBar.classList.toggle('scrolled', isScrolled);
                 if (navigation) {
                     navigation.classList.toggle('scrolled', isScrolled);
@@ -47,7 +44,6 @@
                     ticking = true;
                 }
             }, { passive: true });
-            window.addEventListener('resize', update, { passive: true });
         }
 
         /* ---- Mobile menu ---- */
