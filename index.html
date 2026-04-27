@@ -9,6 +9,14 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="MVC">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
     <title>Mountain View Commons — Mixed-Use Flex Property in Heber City, Utah</title>
     <meta name="description" content="43 mixed-use flex units in Heber City, UT. ~5,000 sq ft across 3 floors with drive-through 16' garages. Residential, commercial, and warehouse zoning from $1.05M. 15 min to Deer Valley.">
 
@@ -86,6 +94,7 @@
           },
           "address": {
             "@type": "PostalAddress",
+            "streetAddress": "Hwy 40 + Airport Rd",
             "addressLocality": "Heber City",
             "addressRegion": "UT",
             "postalCode": "84032",
@@ -188,7 +197,7 @@
      ================================================================ -->
 <section class="home-hero">
     <div class="home-hero__bg">
-        <img src="/assets/photos/DJI_0697.webp" alt="Aerial view of Mountain View Commons mixed-use development in Heber City, Utah, with the Wasatch Range in the background" loading="eager" fetchpriority="high">
+        <img src="/assets/photos/DJI_0697.webp" alt="Aerial view of Mountain View Commons mixed-use development in Heber City, Utah, with the Wasatch Range in the background" width="2048" height="1364" loading="eager" fetchpriority="high">
     </div>
     <div class="home-hero__content">
         <div class="home-hero__id">[ MVC / HEBER CITY, UT / 40.4862N · 111.4136W ]</div>
@@ -463,7 +472,7 @@
 </section>
 
 <!-- Lightbox (shared) -->
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery">
+<div class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image gallery">
     <button class="lightbox__close" type="button" aria-label="Close">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
@@ -476,6 +485,57 @@
     </button>
     <div class="lightbox__cap"></div>
 </div>
+
+<!-- ================================================================
+     LOCATOR MAP (aerial corridor)
+     ================================================================ -->
+<section class="bg-ink section-block locator-map" aria-labelledby="locator-map-title">
+    <div class="section-block__inner">
+        <div class="section-block__head">
+            <p class="section-block__eyebrow">[ The Corridor ]</p>
+            <h2 class="section-block__title" id="locator-map-title" style="color:#fff">Two miles to the runway. Fifteen to Deer Valley.</h2>
+            <p class="section-block__deck">Mountain View Commons sits on the south end of Heber City — anchored on Hwy 40, half a mile east of Hwy 189. The aerial below shows the full Wasatch Back corridor looking north, with measured distances from the MVC site.</p>
+        </div>
+        <figure class="locator-map__figure">
+            <picture>
+                <source media="(min-width: 1200px)" srcset="/assets/photos/mountain-view-commons-location-map-heber-valley-utah.webp" type="image/webp">
+                <source media="(min-width: 768px)" srcset="/assets/photos/mountain-view-commons-location-map-heber-valley-utah-1600.webp" type="image/webp">
+                <img src="/assets/photos/mountain-view-commons-location-map-heber-valley-utah-1200.webp"
+                     alt="Aerial map of Mountain View Commons in Heber City, Utah, looking north toward Salt Lake City. Labeled distances from the MVC site: Heber Valley Airport 2 miles, Deer Creek Reservoir 4 miles, Deer Valley Resort 14 miles, Jordanelle Reservoir 15 miles, Sundance Resort 16 miles, Park City Main Street 21 miles, Provo Airport 32 miles, Salt Lake City International Airport 54 miles."
+                     width="2400" height="1050"
+                     class="locator-map__img"
+                     loading="lazy"
+                     decoding="async">
+            </picture>
+            <figcaption class="locator-map__caption">
+                <span><strong>FIG-01</strong> · Aerial corridor — Heber Valley, UT · view looking north</span>
+                <span>Distances measured from MVC site</span>
+            </figcaption>
+        </figure>
+        <div class="locator-map__legend" aria-label="Distances from Mountain View Commons">
+            <div class="locator-map__legend-item">
+                <p class="locator-map__legend-key">[ Heber Valley Airport ]</p>
+                <p class="locator-map__legend-val"><span class="num">2</span><span class="unit">mi</span></p>
+            </div>
+            <div class="locator-map__legend-item">
+                <p class="locator-map__legend-key">[ Deer Valley Resort ]</p>
+                <p class="locator-map__legend-val"><span class="num">14</span><span class="unit">mi</span></p>
+            </div>
+            <div class="locator-map__legend-item">
+                <p class="locator-map__legend-key">[ Park City Main Street ]</p>
+                <p class="locator-map__legend-val"><span class="num">21</span><span class="unit">mi</span></p>
+            </div>
+            <div class="locator-map__legend-item">
+                <p class="locator-map__legend-key">[ SLC International ]</p>
+                <p class="locator-map__legend-val"><span class="num">54</span><span class="unit">mi</span></p>
+            </div>
+        </div>
+        <div class="btn-row" style="margin-top:32px">
+            <a href="/location/" class="btn btn--gold">Full Location Page</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Mountain+View+Commons+Heber+City+UT" target="_blank" rel="noopener noreferrer" class="btn btn--white">Open in Maps</a>
+        </div>
+    </div>
+</section>
 
 <!-- ================================================================
      LOCATION PREVIEW
@@ -648,13 +708,14 @@
         </div>
     </div>
     <div class="footer__bottom">
-        <img src="/assets/vue-dark.png" alt="VUE | Christie's International Real Estate">
+        <img src="/assets/vue-dark.png" alt="VUE | Christie's International Real Estate" width="163" height="22" loading="lazy" decoding="async">
         <p class="footer__copy">©2026 Mountain View Commons · All rights reserved</p>
     </div>
     <div class="footer__legal">
         <p>©2026 Christie's International Real Estate. All rights reserved. This Christie's International Real Estate brokerage is independently owned and operated. Christie's International Real Estate fully supports the principles of the Fair Housing Act and is an Equal Opportunity Employer. All listing information is from sources deemed reliable. However, no representation is made as to the accuracy or completeness thereof and should be independently verified.</p>
         <p>All renderings and illustrative maps are artist's conceptual renderings only and subject to change without notice. The developer reserves the right to make any modifications and changes as deemed necessary. Property sizes, specifications, and layouts are approximate only and subject to change without notice. Amenities shown in renderings are proposed. Prices are subject to change without notice. Errors and omissions excepted. Unauthorized use of the images, artist renderings, plans, or other depictions of the development is strictly prohibited.</p>
     </div>
+    <a class="footer__top-link" href="#" aria-label="Back to top">Back to top ↑</a>
 </footer>
 
 <script src="/assets/site.js"></script>

@@ -34,8 +34,9 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# Disallow admin / search params
+# Disallow admin / search params / dev docs
 Disallow: /*?*sort=
 Disallow: /*?*filter=
+Disallow: /docs/
 
 Sitemap: https://www.mtnviewcommonsut.com/sitemap.xml

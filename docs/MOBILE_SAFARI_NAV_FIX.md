@@ -36,9 +36,12 @@ Expose the same scroll state on both the inner bar and outer wrapper. Do not mut
 
 ```js
 var isScrolled = window.pageYOffset > 80;
+var scrollMax = document.documentElement.scrollHeight - window.innerHeight;
+var scrollProgress = scrollMax > 0 ? Math.min(window.pageYOffset / scrollMax, 1) : 0;
 navBar.classList.toggle('scrolled', isScrolled);
 navigation.classList.toggle('is-scrolled', isScrolled);
 document.documentElement.classList.toggle('nav-scrolled', isScrolled);
+document.documentElement.style.setProperty('--scroll-progress', scrollProgress);
 ```
 
 ### CSS
@@ -51,6 +54,26 @@ body {
 
 main {
   background: var(--paper);
+}
+
+.navigation::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--gold);
+  opacity: 0;
+  pointer-events: none;
+  transform: scaleX(var(--scroll-progress, 0));
+  transform-origin: left center;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.navigation.is-scrolled::after {
+  opacity: 1;
 }
 
 @media (max-width: 520px) {
@@ -114,6 +137,7 @@ Closed fixed drawers should not remain offscreen with transforms. Use `display: 
 - The mobile nav is sticky, like BHI, so it participates in normal document flow.
 - `main` is pulled up by the mobile nav height, so the transparent page-load state still shows hero/content behind the nav.
 - The nav turns dark on scroll using regular `.scrolled` / `.is-scrolled` classes.
+- The yellow progress bar is a `.navigation::after` element that stays hidden until `.is-scrolled`, then fills left-to-right from `--scroll-progress`.
 - Hidden fixed layers are removed from Safari's sampling/compositing path.
 - `theme-color` stays stable instead of changing on scroll.
 - The fixed noise overlay is disabled on mobile so it cannot affect browser tinting or top-layer compositing.
@@ -125,4 +149,5 @@ Closed fixed drawers should not remain offscreen with transforms. Use `display: 
 - Disable decorative fixed full-screen overlays on mobile.
 - Keep mobile nav `position: sticky`.
 - Keep `body > main { margin-top: -81px; }` if the mobile nav height remains 81px.
+- Keep `--scroll-progress` updated from JS if the footer progress bar is enabled.
 - Test on a real iPhone in Safari, not only Chrome desktop emulation.

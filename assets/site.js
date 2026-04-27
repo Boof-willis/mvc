@@ -32,9 +32,12 @@
             var ticking = false;
             var update = function () {
                 var isScrolled = window.pageYOffset > 80;
+                var scrollMax = document.documentElement.scrollHeight - window.innerHeight;
+                var scrollProgress = scrollMax > 0 ? Math.min(window.pageYOffset / scrollMax, 1) : 0;
                 navBar.classList.toggle('scrolled', isScrolled);
                 if (navigation) navigation.classList.toggle('is-scrolled', isScrolled);
                 root.classList.toggle('nav-scrolled', isScrolled);
+                root.style.setProperty('--scroll-progress', scrollProgress);
                 ticking = false;
             };
             update();
@@ -54,14 +57,22 @@
         var openMenu = function () {
             if (!menu) return;
             menu.classList.add('open');
+            menu.setAttribute('aria-hidden', 'false');
             document.body.classList.add('menu-open');
-            if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+            if (toggleBtn) {
+                toggleBtn.setAttribute('aria-expanded', 'true');
+                toggleBtn.setAttribute('aria-label', 'Close menu');
+            }
         };
         var closeMenu = function () {
             if (!menu) return;
             menu.classList.remove('open');
+            menu.setAttribute('aria-hidden', 'true');
             document.body.classList.remove('menu-open');
-            if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+            if (toggleBtn) {
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                toggleBtn.setAttribute('aria-label', 'Open menu');
+            }
         };
 
         if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
@@ -136,10 +147,12 @@
                 lbImg.setAttribute('alt', cap);
                 if (lbCap) lbCap.textContent = cap;
                 lightbox.classList.add('open');
+                lightbox.setAttribute('aria-hidden', 'false');
                 document.body.classList.add('menu-open');
             };
             var close = function () {
                 lightbox.classList.remove('open');
+                lightbox.setAttribute('aria-hidden', 'true');
                 document.body.classList.remove('menu-open');
                 lbImg.setAttribute('src', '');
             };
@@ -193,6 +206,125 @@
                 filmStage.classList.remove('is-playing');
                 filmVideo.currentTime = 0;
             });
+        }
+
+        /* ---- Contact form (LeadConnector webhook, JSON POST) ---- */
+        var contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            var formStatus = document.getElementById('form-status');
+            var submitBtn = contactForm.querySelector('.form__submit');
+            var endpoint = contactForm.getAttribute('action');
+            var source = contactForm.getAttribute('data-source') || 'Website Form';
+            var defaultHint = formStatus ? formStatus.textContent : '';
+
+            var setStatus = function (msg, tone) {
+                if (!formStatus) return;
+                formStatus.textContent = msg;
+                formStatus.style.color = tone === 'error' ? '#e76f51'
+                    : tone === 'success' ? 'var(--gold)'
+                    : '';
+            };
+
+            var showSuccess = function () {
+                var wrap = contactForm.parentNode;
+                var success = document.createElement('div');
+                success.className = 'form__success';
+                success.setAttribute('role', 'status');
+                success.innerHTML =
+                    '<p class="section-block__eyebrow">[ Inquiry Sent ]</p>' +
+                    '<h3 class="section-block__title" style="color:#fff;margin-bottom:16px">Thanks — we\u2019ll be in touch.</h3>' +
+                    '<p class="section-block__deck" style="margin-bottom:0">' +
+                        'Your inquiry just landed with the on-site sales team. They typically respond within an hour during open house hours (Tues\u2013Fri 1\u20135 PM, Sat 11 AM\u20133 PM).<br><br>' +
+                        'For an immediate response, call <a href="tel:+14355033293" style="color:var(--gold);border-bottom:1px solid rgba(242,193,78,0.4)">435.503.3293</a>.' +
+                    '</p>';
+                contactForm.replaceWith(success);
+                success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            };
+
+            var validate = function () {
+                var required = contactForm.querySelectorAll('[required]');
+                for (var i = 0; i < required.length; i++) {
+                    var el = required[i];
+                    if (!el.value || (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value))) {
+                        el.focus();
+                        setStatus('Please complete all required fields with a valid email address.', 'error');
+                        return false;
+                    }
+                }
+                return true;
+            };
+
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var honey = contactForm.querySelector('input[name="_honey"]');
+                if (honey && honey.value) {
+                    showSuccess();
+                    return;
+                }
+
+                if (!validate()) return;
+
+                var data = {
+                    name: (contactForm.elements['Name'] && contactForm.elements['Name'].value || '').trim(),
+                    email: (contactForm.elements['Email'] && contactForm.elements['Email'].value || '').trim(),
+                    phone: (contactForm.elements['Phone'] && contactForm.elements['Phone'].value || '').trim(),
+                    interest: (contactForm.elements['Interest'] && contactForm.elements['Interest'].value || '').trim(),
+                    message: (contactForm.elements['Message'] && contactForm.elements['Message'].value || '').trim(),
+                    source: source,
+                    page: window.location.href,
+                    referrer: document.referrer || '',
+                    submittedAt: new Date().toISOString()
+                };
+
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending\u2026';
+                }
+                setStatus('Sending your inquiry\u2026');
+
+                var fail = function () {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Inquiry';
+                    }
+                    setStatus(
+                        'Something went wrong sending your inquiry. Please call 435.503.3293 or email jonathan.crosswhite@vuere.com directly.',
+                        'error'
+                    );
+                };
+
+                if (!window.fetch) {
+                    fail();
+                    return;
+                }
+
+                fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                }).then(function (res) {
+                    if (res && res.ok) {
+                        showSuccess();
+                        return;
+                    }
+                    return fetch(endpoint, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    }).then(showSuccess).catch(fail);
+                }).catch(function () {
+                    fetch(endpoint, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    }).then(showSuccess).catch(fail);
+                });
+            });
+
+            void defaultHint;
         }
 
         /* ---- Reduced motion ---- */

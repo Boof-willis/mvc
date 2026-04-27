@@ -9,6 +9,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="MVC">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
     <title>Contact & Schedule a Tour | Mountain View Commons — Heber City UT</title>
     <meta name="description" content="Schedule a tour of Mountain View Commons or contact the on-site team. Open house Tues–Fri 1–5 PM and Sat 11 AM–3 PM. Call 435.503.3293 or message Jonathan Crosswhite at Christie's International Real Estate.">
 
@@ -18,13 +26,13 @@
     <meta property="og:title" content="Contact & Schedule a Tour | Mountain View Commons">
     <meta property="og:description" content="Schedule a private tour of Mountain View Commons in Heber City, UT. Call 435.503.3293.">
     <meta property="og:url" content="https://www.mtnviewcommonsut.com/contact/">
-    <meta property="og:image" content="https://www.mtnviewcommonsut.com/assets/photos/DSC04015.webp">
+    <meta property="og:image" content="https://www.mtnviewcommonsut.com/assets/photos/DSC04001.webp">
     <meta property="og:site_name" content="Mountain View Commons">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contact & Schedule a Tour | Mountain View Commons">
     <meta name="twitter:description" content="Schedule a private tour. Heber City, UT. 435.503.3293.">
-    <meta name="twitter:image" content="https://www.mtnviewcommonsut.com/assets/photos/DSC04015.webp">
+    <meta name="twitter:image" content="https://www.mtnviewcommonsut.com/assets/photos/DSC04001.webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,7 +135,7 @@
 
 <section class="page-hero" style="min-height:50vh">
     <div class="page-hero__bg">
-        <img src="/assets/photos/DSC04014.webp" alt="Mountain View Commons exterior at evening" loading="eager" fetchpriority="high">
+        <img src="/assets/photos/DSC04001.webp" alt="Mountain View Commons exterior facade and entry — three mixed-use units fronting the lot in Heber City, Utah" width="2048" height="1369" loading="eager" fetchpriority="high">
     </div>
     <div class="page-hero__inner">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -154,10 +162,8 @@
                     Pricing on a specific plan? A private tour? An investor packet? The form goes directly to the on-site team and the broker. Calls are typically answered within an hour during open house hours.
                 </p>
 
-                <form class="form" action="https://formsubmit.co/jonathan.crosswhite@vuere.com" method="POST" aria-label="Contact form">
-                    <input type="hidden" name="_subject" value="MVC Website Inquiry">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="true">
+                <form id="contact-form" class="form" action="https://services.leadconnectorhq.com/hooks/jmi9G6HcIXtki2Y1JVCz/webhook-trigger/a2cbef9b-4a5e-4c67-96b1-4004c556be7b" method="POST" aria-label="Contact form" novalidate data-source="Mountain View Commons Website Contact Form">
+                    <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
 
                     <div class="form__row">
                         <div class="form__field">
@@ -198,7 +204,7 @@
                     </div>
 
                     <button type="submit" class="btn btn--gold form__submit">Send Inquiry</button>
-                    <p class="form__hint">We respond Monday–Saturday during business hours. For urgent inquiries, call 435.503.3293 directly.</p>
+                    <p class="form__hint" id="form-status" role="status" aria-live="polite">We respond Monday–Saturday during business hours. For urgent inquiries, call 435.503.3293 directly. Your information is shared only with the on-site sales team and listing broker — never sold or used for marketing lists.</p>
                 </form>
             </div>
 
@@ -229,7 +235,7 @@
                         Mountain View Commons<br>
                         Hwy 40 + Airport Rd<br>
                         Heber City, UT 84032<br>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Mountain+View+Commons+Heber+City+UT" target="_blank" rel="noopener" style="color:var(--gold);border-bottom:1px solid rgba(242,193,78,0.3)">Open in Maps →</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Mountain+View+Commons+Heber+City+UT" target="_blank" rel="noopener noreferrer" style="color:var(--gold);border-bottom:1px solid rgba(242,193,78,0.3)">Open in Maps →</a>
                     </p>
                 </div>
             </div>
@@ -280,8 +286,9 @@
         <div><p class="footer__col-title">[ Discover ]</p><ul class="footer__list"><li><a href="/gallery/">Gallery</a></li><li><a href="/location/">Location</a></li><li><a href="/faqs/">FAQs</a></li><li><a href="/contact/">Contact</a></li></ul></div>
         <div><p class="footer__col-title">[ Open House ]</p><ul class="footer__list"><li>Tues–Fri 1 – 5 PM</li><li>Saturday 11 AM – 3 PM</li><li>No appointment needed</li><li><a href="tel:+14355033293">435.503.3293</a></li><li><a href="mailto:jonathan.crosswhite@vuere.com">Email broker</a></li></ul></div>
     </div>
-    <div class="footer__bottom"><img src="/assets/vue-dark.png" alt="VUE | Christie's International Real Estate"><p class="footer__copy">©2026 Mountain View Commons · All rights reserved</p></div>
+    <div class="footer__bottom"><img src="/assets/vue-dark.png" alt="VUE | Christie's International Real Estate" width="163" height="22" loading="lazy" decoding="async"><p class="footer__copy">©2026 Mountain View Commons · All rights reserved</p></div>
     <div class="footer__legal"><p>©2026 Christie's International Real Estate. All rights reserved. This Christie's International Real Estate brokerage is independently owned and operated.</p><p>All renderings and illustrative maps are artist's conceptual renderings only and subject to change without notice. Property sizes, specifications, and layouts are approximate only and subject to change without notice. Prices are subject to change without notice.</p></div>
+    <a class="footer__top-link" href="#" aria-label="Back to top">Back to top ↑</a>
 </footer>
 
 <script src="/assets/site.js"></script>

@@ -9,6 +9,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="MVC">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
     <title>Location — Heber City, Utah | Mountain View Commons (15 min to Deer Valley)</title>
     <meta name="description" content="Mountain View Commons is on Hwy 40 in Heber City, Utah — under 2 miles from Heber Valley Airport, 15 min to Deer Valley East Village, 25 min to Park City, under an hour to Salt Lake International. 2034 Olympics host market.">
 
@@ -57,7 +65,28 @@
         "addressCountry": "US"
       },
       "geo": { "@type": "GeoCoordinates", "latitude": 40.4862, "longitude": -111.4136 },
-      "containedInPlace": { "@type": "AdministrativeArea", "name": "Wasatch County, Utah" }
+      "containedInPlace": { "@type": "AdministrativeArea", "name": "Wasatch County, Utah" },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Mountain+View+Commons+Heber+City+UT",
+      "image": "https://www.mtnviewcommonsut.com/assets/photos/mountain-view-commons-location-map-heber-valley-utah.webp"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://www.mtnviewcommonsut.com/assets/photos/mountain-view-commons-location-map-heber-valley-utah.webp",
+      "name": "Aerial location map — Mountain View Commons, Heber City, Utah",
+      "caption": "Aerial corridor map of the Heber Valley showing distances from Mountain View Commons to Heber Valley Airport (2 mi), Deer Creek Reservoir (4 mi), Deer Valley Resort (14 mi), Jordanelle Reservoir (15 mi), Sundance Resort (16 mi), Park City Main Street (21 mi), Provo Airport (32 mi), and Salt Lake City International Airport (54 mi).",
+      "description": "Aerial view of the Heber Valley and Wasatch Back, looking north, with the Mountain View Commons site labeled and measured distances to nearby airports, ski resorts, and reservoirs.",
+      "width": 2400,
+      "height": 1050,
+      "encodingFormat": "image/webp",
+      "representativeOfPage": true,
+      "contentLocation": {
+        "@type": "Place",
+        "name": "Heber Valley, Utah",
+        "geo": { "@type": "GeoCoordinates", "latitude": 40.4862, "longitude": -111.4136 }
+      }
     }
     </script>
 </head>
@@ -118,7 +147,7 @@
 
 <section class="page-hero">
     <div class="page-hero__bg">
-        <img src="/assets/photos/DJI_0699.webp" alt="Aerial view of the Heber Valley with the Wasatch Range backdrop" loading="eager" fetchpriority="high">
+        <img src="/assets/photos/DJI_0699.webp" alt="Aerial view of the Heber Valley with the Wasatch Range backdrop" width="2048" height="1364" loading="eager" fetchpriority="high">
     </div>
     <div class="page-hero__inner">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -130,8 +159,71 @@
             On U.S. Highway 40, half a mile east of Hwy 189, on the south end of the Airport Road intersection. Less than two miles from the Heber Valley Airport. Fifteen minutes to Deer Valley's East Village. Twenty-five minutes to Park City Mountain Resort. Under an hour to Salt Lake International.
         </p>
         <div class="btn-row">
-            <a href="https://www.google.com/maps/search/?api=1&query=Mountain+View+Commons+Heber+City+UT" target="_blank" rel="noopener" class="btn btn--gold">Open in Maps</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Mountain+View+Commons+Heber+City+UT" target="_blank" rel="noopener noreferrer" class="btn btn--gold">Open in Maps</a>
             <a href="/contact/" class="btn btn--white">Schedule a Tour</a>
+        </div>
+    </div>
+</section>
+
+<!-- ================================================================
+     LOCATOR MAP (aerial corridor)
+     ================================================================ -->
+<section class="bg-ink section-block locator-map" aria-labelledby="locator-map-title">
+    <div class="section-block__inner">
+        <div class="section-block__head">
+            <p class="section-block__eyebrow">[ Aerial Corridor ]</p>
+            <h2 class="section-block__title" id="locator-map-title" style="color:#fff">The Wasatch Back, from above.</h2>
+            <p class="section-block__deck">Mountain View Commons is anchored on Hwy 40 at the south end of Heber City — two miles from the runway at the Heber Valley Airport, fifteen minutes north to Deer Valley, and under an hour west to Salt Lake City International. The aerial below shows the full corridor, looking north, with measured distances from the MVC site.</p>
+        </div>
+        <figure class="locator-map__figure">
+            <picture>
+                <source media="(min-width: 1200px)" srcset="/assets/photos/mountain-view-commons-location-map-heber-valley-utah.webp" type="image/webp">
+                <source media="(min-width: 768px)" srcset="/assets/photos/mountain-view-commons-location-map-heber-valley-utah-1600.webp" type="image/webp">
+                <img src="/assets/photos/mountain-view-commons-location-map-heber-valley-utah-1200.webp"
+                     alt="Aerial map of Mountain View Commons in Heber City, Utah, looking north toward Salt Lake City. Labeled distances from the MVC site: Heber Valley Airport 2 miles, Deer Creek Reservoir 4 miles, Deer Valley Resort 14 miles, Jordanelle Reservoir 15 miles, Sundance Resort 16 miles, Park City Main Street 21 miles, Provo Airport 32 miles, Salt Lake City International Airport 54 miles."
+                     width="2400" height="1050"
+                     class="locator-map__img"
+                     loading="lazy"
+                     decoding="async">
+            </picture>
+            <figcaption class="locator-map__caption">
+                <span><strong>FIG-01</strong> · Aerial corridor — Heber Valley, UT · view looking north</span>
+                <span>Distances measured from MVC site</span>
+            </figcaption>
+        </figure>
+        <div class="locator-map__legend" aria-label="Distances from Mountain View Commons">
+            <div class="locator-map__legend-item">
+                <p class="locator-map__legend-key">[ Heber Valley Airport ]</p>
+                <p class="locator-map__legend-val"><span class="num">2</span><span class="unit">mi</span></p>
+            </div>
+            <div class="locator-map__legend-item">
+                <p class="locator-map__legend-key">[ Deer Creek Reservoir ]</p>
+                <p class="locator-map__legend-val"><span class="num">4</span><span class="unit">mi</span></p>
+            </div>
+            <div class="locator-map__legend-item">
+                <p class="locator-map__legend-key">[ Deer Valley Resort ]</p>
+                <p class="locator-map__legend-val"><span class="num">14</span><span class="unit">mi</span></p>
+            </div>
+            <div class="locator-map__legend-item">
+                <p class="locator-map__legend-key">[ Jordanelle Reservoir ]</p>
+                <p class="locator-map__legend-val"><span class="num">15</span><span class="unit">mi</span></p>
+            </div>
+            <div class="locator-map__legend-item">
+                <p class="locator-map__legend-key">[ Sundance Resort ]</p>
+                <p class="locator-map__legend-val"><span class="num">16</span><span class="unit">mi</span></p>
+            </div>
+            <div class="locator-map__legend-item">
+                <p class="locator-map__legend-key">[ Park City Main Street ]</p>
+                <p class="locator-map__legend-val"><span class="num">21</span><span class="unit">mi</span></p>
+            </div>
+            <div class="locator-map__legend-item">
+                <p class="locator-map__legend-key">[ Provo Airport ]</p>
+                <p class="locator-map__legend-val"><span class="num">32</span><span class="unit">mi</span></p>
+            </div>
+            <div class="locator-map__legend-item">
+                <p class="locator-map__legend-key">[ SLC International ]</p>
+                <p class="locator-map__legend-val"><span class="num">54</span><span class="unit">mi</span></p>
+            </div>
         </div>
     </div>
 </section>
@@ -283,8 +375,9 @@
         <div><p class="footer__col-title">[ Discover ]</p><ul class="footer__list"><li><a href="/gallery/">Gallery</a></li><li><a href="/location/">Location</a></li><li><a href="/faqs/">FAQs</a></li><li><a href="/contact/">Contact</a></li></ul></div>
         <div><p class="footer__col-title">[ Open House ]</p><ul class="footer__list"><li>Tues–Fri 1 – 5 PM</li><li>Saturday 11 AM – 3 PM</li><li>No appointment needed</li><li><a href="tel:+14355033293">435.503.3293</a></li><li><a href="mailto:jonathan.crosswhite@vuere.com">Email broker</a></li></ul></div>
     </div>
-    <div class="footer__bottom"><img src="/assets/vue-dark.png" alt="VUE | Christie's International Real Estate"><p class="footer__copy">©2026 Mountain View Commons · All rights reserved</p></div>
+    <div class="footer__bottom"><img src="/assets/vue-dark.png" alt="VUE | Christie's International Real Estate" width="163" height="22" loading="lazy" decoding="async"><p class="footer__copy">©2026 Mountain View Commons · All rights reserved</p></div>
     <div class="footer__legal"><p>©2026 Christie's International Real Estate. All rights reserved. This Christie's International Real Estate brokerage is independently owned and operated.</p><p>All renderings and illustrative maps are artist's conceptual renderings only and subject to change without notice. Property sizes, specifications, and layouts are approximate only and subject to change without notice. Prices are subject to change without notice.</p></div>
+    <a class="footer__top-link" href="#" aria-label="Back to top">Back to top ↑</a>
 </footer>
 
 <script src="/assets/site.js"></script>
