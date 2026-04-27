@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#130C0E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>Page Not Found — Mountain View Commons</title>
+    <meta name="description" content="The page you're looking for couldn't be found. Browse the floor plans, the gallery, or schedule a tour at Mountain View Commons in Heber City, UT.">
+    <meta name="robots" content="noindex">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body style="background:var(--ink);min-height:100vh;display:flex;flex-direction:column">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="navigation">
+    <div class="nav-bar">
+        <nav class="nav" aria-label="Primary">
+            <a href="/" class="nav__logo" aria-label="Mountain View Commons — home"><img src="/assets/mvc-logo-white.png" alt="Mountain View Commons"></a>
+            <ul class="nav__links">
+                <li class="nav__item"><a class="nav__link" href="/">Home</a></li>
+                <li class="nav__item"><a class="nav__link" href="/mixed-use/">Mixed-Use</a></li>
+                <li class="nav__item"><a class="nav__link" href="/floor-plans/">Floor Plans</a></li>
+                <li class="nav__item"><a class="nav__link" href="/gallery/">Gallery</a></li>
+                <li class="nav__item"><a class="nav__link" href="/location/">Location</a></li>
+                <li class="nav__item"><a class="nav__link" href="/faqs/">FAQs</a></li>
+                <li class="nav__item"><a class="nav__link" href="/contact/">Contact</a></li>
+            </ul>
+            <a href="tel:+14355033293" class="nav__cta btn btn--gold">Schedule a Tour</a>
+            <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+        </nav>
+    </div>
+</div>
+
+<aside class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__head"><a href="/" class="nav__logo"><img src="/assets/mvc-logo-white.png" alt="Mountain View Commons" style="height:48px"></a><button class="mobile-menu__close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <ul class="mobile-menu__list">
+        <li><a class="mobile-menu__link" href="/">Home <span class="mobile-menu__hint">01</span></a></li>
+        <li><a class="mobile-menu__link" href="/mixed-use/">Mixed-Use <span class="mobile-menu__hint">02</span></a></li>
+        <li><a class="mobile-menu__link" href="/floor-plans/">Floor Plans <span class="mobile-menu__hint">03</span></a></li>
+        <li><a class="mobile-menu__link" href="/gallery/">Gallery <span class="mobile-menu__hint">04</span></a></li>
+        <li><a class="mobile-menu__link" href="/location/">Location <span class="mobile-menu__hint">05</span></a></li>
+        <li><a class="mobile-menu__link" href="/faqs/">FAQs <span class="mobile-menu__hint">06</span></a></li>
+        <li><a class="mobile-menu__link" href="/contact/">Contact <span class="mobile-menu__hint">07</span></a></li>
+    </ul>
+    <div class="mobile-menu__foot"><a href="tel:+14355033293" class="btn btn--gold">Call 435.503.3293</a><a href="/contact/" class="btn btn--white">Schedule a Tour</a></div>
+</aside>
+
+<main id="main" style="flex:1;display:flex;align-items:center;justify-content:center;padding:120px 24px 64px 24px;color:#fff;text-align:center">
+    <div style="max-width:640px">
+        <p class="t-eyebrow" style="margin-bottom:20px;color:var(--gold)">[ 404 / WRONG TURN ]</p>
+        <h1 style="font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(56px,12vw,140px);text-transform:uppercase;letter-spacing:-0.05em;line-height:0.86;color:#fff;margin-bottom:20px">
+            Off the<br><span style="color:var(--gold)">Map.</span>
+        </h1>
+        <p class="t-body" style="color:rgba(255,255,255,0.7);font-size:14px;line-height:1.7;margin-bottom:32px">
+            The page you're looking for moved, never existed, or got renamed during the rebuild. Try one of these instead, or call <a href="tel:+14355033293" style="color:var(--gold);border-bottom:1px solid rgba(242,193,78,0.4)">435.503.3293</a> if you can't find what you need.
+        </p>
+        <div class="btn-row" style="justify-content:center">
+            <a href="/" class="btn btn--gold">Back to Home</a>
+            <a href="/floor-plans/" class="btn btn--white">See Floor Plans</a>
+            <a href="/contact/" class="btn btn--white">Contact</a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer" style="margin-top:0">
+    <div class="footer__bottom" style="margin-top:0">
+        <img src="/assets/mvc-logo-dark.png" alt="Mountain View Commons" style="height:44px;opacity:0.95">
+        <p class="footer__copy">©2026 Mountain View Commons · Heber City, UT</p>
+    </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
