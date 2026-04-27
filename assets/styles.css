@@ -250,13 +250,14 @@ button { font: inherit; }
         right: 0;
         top: 0;
         z-index: 9999;
+        padding-top: env(safe-area-inset-top);
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
     }
     body {
-        padding-top: 80px;
+        padding-top: calc(80px + env(safe-area-inset-top));
     }
 }
 
@@ -574,7 +575,7 @@ body.menu-open { overflow: hidden; }
    ---------------------------------------------------------------- */
 .home-hero {
     position: relative;
-    min-height: calc(100dvh - 80px);
+    min-height: calc(100dvh - 80px - env(safe-area-inset-top));
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
