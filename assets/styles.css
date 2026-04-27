@@ -288,14 +288,6 @@ button { font: inherit; }
     border-bottom-color: rgba(201, 168, 76, 0.22);
 }
 
-/* Dark body bg on home so iOS Safari's translucent URL-bar chrome
-   can't sample the light --paper bg above the (initially transparent)
-   nav. Sections after the hero set their own backgrounds, so this is
-   invisible everywhere except the rubber-band/overscroll region. */
-body.is-home {
-    background: var(--ink);
-}
-
 .nav {
     display: flex;
     align-items: center;
