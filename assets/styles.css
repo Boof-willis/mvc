@@ -464,7 +464,7 @@ button { font: inherit; }
 }
 
 body.menu-open { overflow: hidden; }
-body.menu-open .navigation { display: none; }
+body.menu-open .nav__toggle { visibility: hidden; }
 
 /* ----------------------------------------------------------------
    PAGE HERO (smaller than home hero)
