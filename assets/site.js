@@ -75,7 +75,15 @@
             }
         };
 
-        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function () {
+                if (menu && menu.classList.contains('open')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+        }
         if (closeBtn) closeBtn.addEventListener('click', closeMenu);
         if (menu) {
             menu.querySelectorAll('a').forEach(function (a) {

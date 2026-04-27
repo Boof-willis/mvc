@@ -380,7 +380,7 @@ button { font: inherit; }
 .mobile-menu {
     position: fixed;
     inset: 0;
-    z-index: 100;
+    z-index: 1000;
     background: var(--ink);
     transform: translateY(0);
     transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
@@ -464,6 +464,7 @@ button { font: inherit; }
 }
 
 body.menu-open { overflow: hidden; }
+body.menu-open .navigation { display: none; }
 
 /* ----------------------------------------------------------------
    PAGE HERO (smaller than home hero)
@@ -1250,6 +1251,9 @@ body.menu-open { overflow: hidden; }
     cursor: pointer;
     text-align: left;
     transition: background 0.3s ease;
+    color: var(--ink);
+    -webkit-tap-highlight-color: transparent;
+    font: inherit;
 }
 .faq-q:hover { background: var(--paper-mid); }
 .faq-q__text {
