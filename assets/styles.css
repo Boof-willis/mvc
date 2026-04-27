@@ -216,10 +216,10 @@ button { font: inherit; }
     top: 0; left: 0; right: 0;
     z-index: 50;
     background: transparent;
-    transition: background-color 0.4s ease;
+    transition: background 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .navigation.scrolled {
-    background-color: #fdfdfd;
+    background: var(--ink);
 }
 
 .nav-bar {
@@ -227,13 +227,13 @@ button { font: inherit; }
     width: 100%;
     background: transparent;
     border-bottom: 1px solid transparent;
-    transition: background-color 0.4s ease,
-                border-color 0.4s ease;
+    transition: background 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .navigation.scrolled .nav-bar,
 .nav-bar.scrolled {
-    background-color: #fdfdfd;
-    border-bottom-color: rgba(15, 15, 15, 0.12);
+    background: var(--ink);
+    border-bottom-color: rgba(201, 168, 76, 0.22);
 }
 
 /* Mobile Safari fix (≤520px):
@@ -242,7 +242,7 @@ button { font: inherit; }
    collapses or expands. Body padding is intentionally NOT used —
    the heroes are designed to extend under the transparent nav at
    zero state, then the nav goes solid on scroll. */
-@media (max-width: 991px) {
+@media (max-width: 520px) {
     .navigation {
         position: fixed !important;
         top: 0 !important;
@@ -250,6 +250,7 @@ button { font: inherit; }
         right: 0 !important;
         bottom: auto !important;
         z-index: 9999 !important;
+        isolation: isolate;
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         -webkit-backface-visibility: hidden;
@@ -279,15 +280,10 @@ button { font: inherit; }
     height: 56px;
     width: auto;
     opacity: 0.92;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                filter 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     transform-origin: left center;
 }
 .nav-bar.scrolled .nav__logo img { transform: scale(0.78); opacity: 0.85; }
-.navigation.scrolled .nav__logo img {
-    filter: invert(1);
-}
 
 .nav__links {
     display: none;
@@ -320,18 +316,6 @@ button { font: inherit; }
 .nav__link:hover { color: #fff; border-color: rgba(255,255,255,0.15); }
 .nav__link[aria-current="page"] { color: var(--gold); border-color: rgba(242,193,78,0.25); }
 .nav__link[aria-expanded="true"] { color: #fff; border-color: rgba(255,255,255,0.2); }
-.navigation.scrolled .nav__link {
-    color: #0f0f0f;
-}
-.navigation.scrolled .nav__link:hover,
-.navigation.scrolled .nav__link[aria-expanded="true"] {
-    color: #0f0f0f;
-    border-color: rgba(15,15,15,0.16);
-}
-.navigation.scrolled .nav__link[aria-current="page"] {
-    color: var(--gold-deep);
-    border-color: rgba(201,168,76,0.35);
-}
 
 .nav__cta {
     display: none;
@@ -356,13 +340,6 @@ button { font: inherit; }
 .nav__toggle:hover { border-color: rgba(255,255,255,0.5); }
 .nav__toggle svg { width: 18px; height: 18px; }
 @media (min-width: 1024px) { .nav__toggle { display: none; } }
-.navigation.scrolled .nav__toggle {
-    color: #0f0f0f;
-    border-color: rgba(15,15,15,0.18);
-}
-.navigation.scrolled .nav__toggle:hover {
-    border-color: rgba(15,15,15,0.5);
-}
 
 /* Submenu */
 .nav__submenu {
