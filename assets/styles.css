@@ -269,21 +269,21 @@ body.is-home {
     background: var(--ink);
 }
 
-/* Safe-area cap — real DOM element, not a pseudo. Uses the same
-   inset:0 0 auto 0 fixed-positioning recipe as .mobile-menu (which
-   you confirmed already extends through the iOS notch zone). Height
-   has a 60px floor in case env(safe-area-inset-top) reports 0 in
-   the current Safari URL-bar mode. Sits behind the navbar so the
-   logo and hamburger remain on top. */
-.safe-area-cap {
+/* Safe-area cap. A dedicated fixed element whose only job is to paint
+   dark over the iOS notch / status-bar zone above the navbar. Uses the
+   inset:0 0 auto 0 shorthand (matching the .mobile-menu recipe that
+   already covers the safe area for you) plus height: env() to constrain
+   it to just the inset region. Sits behind the navbar so the navbar
+   logo isn't covered. */
+html::before {
+    content: '';
     position: fixed;
     inset: 0 0 auto 0;
-    height: max(env(safe-area-inset-top, 0px), 60px);
+    height: env(safe-area-inset-top);
     background: var(--ink);
     z-index: 9998;
     pointer-events: none;
 }
-body:not(.is-home) .safe-area-cap { display: none; }
 
 .nav {
     display: flex;
