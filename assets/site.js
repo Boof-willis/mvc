@@ -30,7 +30,10 @@
         if (navBar) {
             var ticking = false;
             var update = function () {
-                var isScrolled = window.pageYOffset > 50;
+                var isMobileNav = window.matchMedia
+                    ? window.matchMedia('(max-width: 520px)').matches
+                    : window.innerWidth <= 520;
+                var isScrolled = window.pageYOffset > (isMobileNav ? 1 : 80);
                 navBar.classList.toggle('scrolled', isScrolled);
                 if (navigation) {
                     navigation.classList.toggle('scrolled', isScrolled);
@@ -52,25 +55,15 @@
         var menu = document.querySelector('.mobile-menu');
         var closeBtn = menu ? menu.querySelector('.mobile-menu__close') : null;
 
-        if (menu) {
-            menu.classList.remove('open');
-            menu.setAttribute('aria-hidden', 'true');
-        }
-        requestAnimationFrame(function () {
-            document.body.classList.add('nav-ready');
-        });
-
         var openMenu = function () {
             if (!menu) return;
             menu.classList.add('open');
-            menu.setAttribute('aria-hidden', 'false');
             document.body.classList.add('menu-open');
             if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
         };
         var closeMenu = function () {
             if (!menu) return;
             menu.classList.remove('open');
-            menu.setAttribute('aria-hidden', 'true');
             document.body.classList.remove('menu-open');
             if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
         };
