@@ -6,18 +6,7 @@
    RESET / TOKENS
    ---------------------------------------------------------------- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-/* Per MOBILE_SAFARI_NAV_FIX.md (matching BHI Placeholder reference):
-   keep <html> clean — Safari needs html to be the viewport-level
-   scroll container so the html bg can extend behind the sticky nav
-   into the iOS Safari URL-bar / status-bar region. Putting any
-   overflow rule on <html> turns it into a custom scroll box and
-   breaks both the URL-bar collapse paint AND position: sticky.
-   Horizontal overflow constraint goes on <body> instead. */
-html {
-    background: var(--ink);
-    scroll-behavior: smooth;
-}
+html { overflow-x: hidden; scroll-behavior: smooth; background-color: #130C0E; }
 
 :root {
     --paper: #F4F4F0;
@@ -38,9 +27,6 @@ body {
     color: var(--ink);
     font-size: 12px;
     line-height: 1.5;
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
