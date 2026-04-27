@@ -269,21 +269,54 @@ body.is-home {
     background: var(--ink);
 }
 
-/* Safe-area cap — real DOM element, not a pseudo. Uses the same
-   inset:0 0 auto 0 fixed-positioning recipe as .mobile-menu (which
-   you confirmed already extends through the iOS notch zone). Height
-   has a 60px floor in case env(safe-area-inset-top) reports 0 in
-   the current Safari URL-bar mode. Sits behind the navbar so the
-   logo and hamburger remain on top. */
-.safe-area-cap {
-    position: fixed;
-    inset: 0 0 auto 0;
-    height: max(env(safe-area-inset-top, 0px), 60px);
-    background: var(--ink);
-    z-index: 9998;
-    pointer-events: none;
+/* ----------------------------------------------------------------
+   STICKY HERO PATTERN — copied from VIDL exactly.
+   - .hero-wrapper holds the hero + a 100vh spacer; margin-bottom: -100vh
+     pulls subsequent siblings (the .home-content-wrapper) UP into the
+     hero's space so they overlay it as the user scrolls.
+   - .home-hero is position: sticky; top: 0 — it stays pinned at the
+     viewport top through the wrapper's entire scroll range, which means
+     iOS Safari chrome translucency always samples the dark hero, not
+     the cream sections below.
+   - .home-content-wrapper has z-index: 1 + a solid bg so it slides
+     cleanly over the hero without bleed.
+   ---------------------------------------------------------------- */
+.is-home .hero-wrapper {
+    position: relative;
+    height: 100%;
+    margin-bottom: -100vh;
 }
-body:not(.is-home) .safe-area-cap { display: none; }
+
+.is-home .home-hero {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    min-height: 100vh;
+}
+
+.is-home .spacer {
+    position: relative;
+    height: 100vh;
+}
+
+.is-home .home-content-wrapper {
+    position: relative;
+    z-index: 1;
+    background: var(--paper);
+    min-height: 100vh;
+}
+
+/* Transparent nav over the pinned hero, fades to solid var(--ink) past
+   50px scroll via .nav-scrolled (toggled in site.js). */
+.is-home .navigation {
+    background: transparent;
+    border-bottom-color: transparent;
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+.is-home .navigation.nav-scrolled {
+    background: var(--ink);
+    border-bottom-color: rgba(201, 168, 76, 0.22);
+}
 
 .nav {
     display: flex;
