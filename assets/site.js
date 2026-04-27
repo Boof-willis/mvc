@@ -24,23 +24,9 @@
             reveals.forEach(function (el) { el.classList.add('visible'); });
         }
 
-        /* Transparent nav on home — fades to solid past 50px scroll
-           by toggling .nav-scrolled. Mirrors the VIDL pattern. Runs
-           once synchronously so a refresh mid-page renders correctly. */
-        if (document.body.classList.contains('is-home')) {
-            var nav = document.querySelector('.navigation');
-            if (nav) {
-                var onNavScroll = function () {
-                    if (window.scrollY > 50) {
-                        nav.classList.add('nav-scrolled');
-                    } else {
-                        nav.classList.remove('nav-scrolled');
-                    }
-                };
-                window.addEventListener('scroll', onNavScroll, { passive: true });
-                onNavScroll();
-            }
-        }
+        /* Nav background is solid by default per MOBILE_SAFARI_NAV_FIX.md.
+           No scroll-state class toggling — the nav looks identical at
+           top of page and after scrolling. */
 
         /* ---- Mobile menu ---- */
         var toggleBtn = document.querySelector('.nav__toggle');
