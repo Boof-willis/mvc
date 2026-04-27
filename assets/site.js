@@ -24,9 +24,23 @@
             reveals.forEach(function (el) { el.classList.add('visible'); });
         }
 
-        /* Nav background is solid by default per MOBILE_SAFARI_NAV_FIX.md.
-           No scroll-state class toggling — the nav looks identical at
-           top of page and after scrolling. */
+        /* Transparent nav on home only. Past 50px of scroll, fade in
+           background + border by toggling .nav-scrolled. Runs once
+           synchronously so a refresh mid-page renders the right state. */
+        if (document.body.classList.contains('is-home')) {
+            var nav = document.querySelector('.navigation');
+            if (nav) {
+                var onNavScroll = function () {
+                    if (window.scrollY > 50) {
+                        nav.classList.add('nav-scrolled');
+                    } else {
+                        nav.classList.remove('nav-scrolled');
+                    }
+                };
+                window.addEventListener('scroll', onNavScroll, { passive: true });
+                onNavScroll();
+            }
+        }
 
         /* ---- Mobile menu ---- */
         var toggleBtn = document.querySelector('.nav__toggle');

@@ -258,12 +258,40 @@ button { font: inherit; }
     body {
         padding-top: 80px;
     }
+    body.is-home {
+        padding-top: 0;
+    }
 }
 
-/* Dark body bg on home so the area above the nav (body padding zone
-   on mobile, plus any iOS Safari safe-area extension) reads as a
-   continuation of the dark navbar. Mirrors BHI's pattern of using the
-   body bg as the "extends to top" surface. */
+/* ----------------------------------------------------------------
+   TRANSPARENT NAV — homepage only.
+   Mirrors the VIDL pattern: nav is fixed + transparent at scroll-0
+   over a full-bleed dark hero, fades to solid var(--ink) past the
+   threshold via a JS-toggled .nav-scrolled class.
+   ---------------------------------------------------------------- */
+.is-home .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: transparent;
+    border-bottom-color: transparent;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+.is-home .navigation.nav-scrolled {
+    background: var(--ink);
+    border-bottom-color: rgba(201, 168, 76, 0.22);
+}
+
+/* Dark body bg on home so iOS Safari's translucent URL-bar chrome
+   can't sample the light --paper bg above the (initially transparent)
+   nav. Sections after the hero set their own backgrounds, so this is
+   invisible everywhere except the rubber-band/overscroll region. */
 body.is-home {
     background: var(--ink);
 }
@@ -574,7 +602,7 @@ body.menu-open { overflow: hidden; }
    ---------------------------------------------------------------- */
 .home-hero {
     position: relative;
-    min-height: calc(100dvh - 80px);
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -582,6 +610,21 @@ body.menu-open { overflow: hidden; }
     background: var(--ink);
 }
 .home-hero__bg { position: absolute; inset: 0; z-index: 1; }
+
+/* Top scrim — guarantees the transparent nav text reads on any hero photo. */
+.home-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(to bottom,
+        rgba(19, 12, 14, 0.7) 0%,
+        rgba(19, 12, 14, 0) 100%);
+}
 
 @keyframes hero-drift {
     0%   { transform: scale(1.05) translate(0, 0); }
