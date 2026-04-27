@@ -243,6 +243,22 @@ button { font: inherit; }
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
     }
+
+    .navigation::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: max(env(safe-area-inset-top, 0px), 16px);
+        background: transparent;
+        pointer-events: none;
+        transition: background 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .navigation.scrolled::before {
+        background: var(--ink);
+    }
 }
 
 .nav {
