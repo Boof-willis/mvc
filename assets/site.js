@@ -228,8 +228,8 @@
             var setStatus = function (msg, tone) {
                 if (!formStatus) return;
                 formStatus.textContent = msg;
-                formStatus.style.color = tone === 'error' ? '#e76f51'
-                    : tone === 'success' ? 'var(--gold)'
+                formStatus.style.color = tone === 'error' ? '#c0392b'
+                    : tone === 'success' ? 'var(--gold-deep)'
                     : '';
             };
 
@@ -240,10 +240,10 @@
                 success.setAttribute('role', 'status');
                 success.innerHTML =
                     '<p class="section-block__eyebrow">[ Inquiry Sent ]</p>' +
-                    '<h3 class="section-block__title" style="color:#fff;margin-bottom:16px">Thanks — we\u2019ll be in touch.</h3>' +
+                    '<h3 class="section-block__title" style="margin-bottom:16px">Thanks — we\u2019ll be in touch.</h3>' +
                     '<p class="section-block__deck" style="margin-bottom:0">' +
                         'Your inquiry just landed with the on-site sales team. They typically respond within an hour during open house hours (Tues\u2013Fri 1\u20135 PM, Sat 11 AM\u20133 PM).<br><br>' +
-                        'For an immediate response, call <a href="tel:+14355033293" style="color:var(--gold);border-bottom:1px solid rgba(242,193,78,0.4)">435.503.3293</a>.' +
+                        'For an immediate response, call <a href="tel:+14355033293" style="color:var(--gold-deep);border-bottom:1px solid rgba(201,168,76,0.5)">435.503.3293</a>.' +
                     '</p>';
                 contactForm.replaceWith(success);
                 success.scrollIntoView({ behavior: 'smooth', block: 'center' });
