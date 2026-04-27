@@ -23,12 +23,16 @@ html { overflow-x: hidden; scroll-behavior: smooth; background-color: #130C0E; }
 
 body {
     font-family: 'JetBrains Mono', 'Courier New', monospace;
-    background: var(--paper);
+    background: var(--ink);
     color: var(--ink);
     font-size: 12px;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+}
+
+main {
+    background: var(--paper);
 }
 
 body::after {
@@ -231,17 +235,48 @@ button { font: inherit; }
 }
 
 /* Mobile Safari fix (≤520px):
-   Promote the fixed nav to its own compositor layer so iOS Safari
-   doesn't paint page content above/behind the nav while the URL bar
-   collapses or expands. Body padding is intentionally NOT used —
-   the heroes are designed to extend under the transparent nav at
-   zero state, then the nav goes solid on scroll. */
+   Keep the working BHI-style structure, but use the MVC dark nav color.
+   Avoid scroll-time theme-color mutation and hidden fixed overlays. */
 @media (max-width: 520px) {
+    body::after {
+        display: none;
+    }
+
+    body > main {
+        margin-top: -81px;
+    }
+
     .navigation {
+        position: sticky;
+        top: 0;
+        left: auto;
+        right: auto;
+        width: 100%;
+        z-index: 999;
+        background: transparent;
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
+    }
+
+    .navigation.is-scrolled {
+        background: var(--ink);
+    }
+
+    .nav-bar {
+        background: transparent;
+        border-bottom-color: transparent;
+    }
+
+    .nav-bar.scrolled {
+        background: var(--ink);
+        border-bottom-color: rgba(201, 168, 76, 0.22);
+    }
+
+    .nav__toggle {
+        color: #fff;
+        border-color: rgba(255,255,255,0.18);
     }
 }
 
@@ -360,14 +395,14 @@ button { font: inherit; }
     inset: 0;
     z-index: 100;
     background: var(--ink);
-    transform: translateY(-100%);
+    transform: translateY(0);
     transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: max(env(safe-area-inset-top, 16px), 16px) 20px 32px 20px;
     overflow-y: auto;
 }
-.mobile-menu.open { transform: translateY(0); }
+.mobile-menu.open { display: flex; }
 .mobile-menu__head {
     display: flex;
     justify-content: space-between;

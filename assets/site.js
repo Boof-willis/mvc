@@ -27,9 +27,14 @@
         /* ---- Nav scroll state (solid bg, gold rule on scroll) ---- */
         var navBar = document.querySelector('.nav-bar');
         if (navBar) {
+            var navigation = document.querySelector('.navigation');
+            var root = document.documentElement;
             var ticking = false;
             var update = function () {
-                navBar.classList.toggle('scrolled', window.pageYOffset > 80);
+                var isScrolled = window.pageYOffset > 80;
+                navBar.classList.toggle('scrolled', isScrolled);
+                if (navigation) navigation.classList.toggle('is-scrolled', isScrolled);
+                root.classList.toggle('nav-scrolled', isScrolled);
                 ticking = false;
             };
             update();
