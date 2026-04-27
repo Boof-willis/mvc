@@ -24,28 +24,9 @@
             reveals.forEach(function (el) { el.classList.add('visible'); });
         }
 
-        /* ---- Nav scroll state (solid bg, gold rule on scroll) ---- */
-        var navBar = document.querySelector('.nav-bar');
-        var navigation = document.querySelector('.navigation');
-        if (navBar) {
-            var ticking = false;
-            var update = function () {
-                var isScrolled = window.pageYOffset > 50;
-                navBar.classList.toggle('scrolled', isScrolled);
-                if (navigation) {
-                    navigation.classList.toggle('scrolled', isScrolled);
-                }
-                ticking = false;
-            };
-            update();
-            window.addEventListener('scroll', function () {
-                if (!ticking) {
-                    requestAnimationFrame(update);
-                    ticking = true;
-                }
-            }, { passive: true });
-            window.addEventListener('resize', update, { passive: true });
-        }
+        /* Nav background is solid by default per MOBILE_SAFARI_NAV_FIX.md.
+           No scroll-state class toggling — the nav looks identical at
+           top of page and after scrolling. */
 
         /* ---- Mobile menu ---- */
         var toggleBtn = document.querySelector('.nav__toggle');
