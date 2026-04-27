@@ -269,22 +269,6 @@ body.is-home {
     background: var(--ink);
 }
 
-/* Safe-area cap. A dedicated fixed element whose only job is to paint
-   dark over the iOS notch / status-bar zone above the navbar. Uses the
-   inset:0 0 auto 0 shorthand (matching the .mobile-menu recipe that
-   already covers the safe area for you) plus height: env() to constrain
-   it to just the inset region. Sits behind the navbar so the navbar
-   logo isn't covered. */
-html::before {
-    content: '';
-    position: fixed;
-    inset: 0 0 auto 0;
-    height: env(safe-area-inset-top);
-    background: var(--ink);
-    z-index: 9998;
-    pointer-events: none;
-}
-
 .nav {
     display: flex;
     align-items: center;
