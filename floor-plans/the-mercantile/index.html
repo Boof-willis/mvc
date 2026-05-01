@@ -36,7 +36,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/styles.css">
 
@@ -156,14 +156,15 @@
     </div>
 </section>
 
-<section style="background:var(--paper);padding:64px 20px;border-bottom:1px solid var(--ink)" id="levels" aria-labelledby="levels-title">
-    <div style="max-width:1200px;margin:0 auto">
+<section style="background:var(--paper);padding-top:64px;border-bottom:1px solid var(--ink)" id="levels" aria-labelledby="levels-title">
+    <div style="max-width:1200px;margin:0 auto;padding:0 20px 48px 20px;">
         <div class="section-block__head">
             <p class="section-block__eyebrow">[ Floor by Floor ]</p>
             <h2 class="section-block__title" id="levels-title">Garage. Open floor. Executive level.</h2>
             <p class="section-block__deck">The Mercantile is the most-commercial of the four plans. Every floor is built around the workday — and the geometry of trades, sales meetings, and small-team operations.</p>
         </div>
-        <div class="render-stack">
+    </div>
+    <div class="render-stack" style="border-left:none;border-right:none;">
             <figure>
                 <img src="/assets/renders/the-mercantile-floor-1-warehouse-floor-plan.webp" alt="The Mercantile commercial floor plan — level 1 active warehouse with forklift, palletized inventory shelving, loading bay, half bath, and stair core at Mountain View Commons in Heber City Utah" width="1200" height="600" loading="lazy" decoding="async">
                 <figcaption>LV-01 · Garage · Bath</figcaption>
@@ -177,16 +178,16 @@
                 <figcaption>LV-03 · Pro Space · Glass Office · Bath</figcaption>
             </figure>
         </div>
-    </div>
 </section>
 
-<section class="bg-paper section-block">
-    <div class="section-block__inner">
+<section class="bg-paper section-block" style="padding-left:0;padding-right:0;">
+    <div class="section-block__inner" style="padding-left:20px;padding-right:20px;">
         <div class="section-block__head">
             <p class="section-block__eyebrow">[ Level Detail ]</p>
             <h2 class="section-block__title">What lives where.</h2>
         </div>
-        <div class="trio__grid" style="border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)">
+    </div>
+    <div class="trio__grid" style="border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)">
             <article class="trio__card">
                 <div class="trio__idx">01</div>
                 <p class="trio__key">[ LV-01 / GARAGE ]</p>
@@ -206,7 +207,33 @@
                 <p class="trio__body">The top floor is the executive level: open professional space, a private glass-walled office, and a third bathroom. Run the company from here, hold client meetings, or lease the level separately. With its own elevator stop, it can be sub-divided as a separate suite.</p>
             </article>
         </div>
+</section>
+
+<!-- ================================================================
+     INTERIOR VISION (RENDERS)
+     ================================================================ -->
+<section class="bg-ink section-block" aria-labelledby="vision-title" style="padding-bottom:0;padding-left:0;padding-right:0;">
+    <div class="section-block__inner" style="padding-left:20px;padding-right:20px;">
+        <div class="section-block__head">
+            <p class="section-block__eyebrow">[ The Vision ]</p>
+            <h2 class="section-block__title" id="vision-title" style="color:#fff">Unfinished Layout.</h2>
+            <p class="section-block__deck">Computer-generated renderings of the unfinished floor plan, illustrating the scale and layout potential.</p>
+        </div>
     </div>
+    <div class="render-stack" style="border-left:none;border-right:none;border-bottom:none;">
+            <figure>
+                <img src="/assets/renders/the-mercantile-interior-render-1.webp" alt="Computer generated rendering of The Mercantile unfinished interior floor plan showing the potential layout and volume of the space" width="1200" height="800" loading="lazy" decoding="async">
+                <figcaption>Interior View 01</figcaption>
+            </figure>
+            <figure>
+                <img src="/assets/renders/the-mercantile-interior-render-2.webp" alt="Another computer generated rendering of The Mercantile unfinished interior showing potential window placement and natural light" width="1200" height="800" loading="lazy" decoding="async">
+                <figcaption>Interior View 02</figcaption>
+            </figure>
+            <figure>
+                <img src="/assets/renders/the-mercantile-interior-render-3.webp" alt="A third computer generated rendering of The Mercantile unfinished interior floor plan" width="1200" height="800" loading="lazy" decoding="async">
+                <figcaption>Interior View 03</figcaption>
+            </figure>
+        </div>
 </section>
 
 <section class="two-col">
@@ -292,7 +319,7 @@
         <div><p class="footer__col-title">[ Discover ]</p><ul class="footer__list"><li><a href="/gallery/">Gallery</a></li><li><a href="/location/">Location</a></li><li><a href="/faqs/">FAQs</a></li><li><a href="/contact/">Contact</a></li></ul></div>
         <div><p class="footer__col-title">[ Open House ]</p><ul class="footer__list"><li>Tues–Fri 1 – 5 PM</li><li>Saturday 11 AM – 3 PM</li><li>No appointment needed</li><li><a href="tel:+14355033293">435.503.3293</a></li><li><a href="mailto:jonathan.crosswhite@vuere.com">Email broker</a></li></ul></div>
     </div>
-    <div class="footer__bottom"><img src="/assets/vue-dark.png" alt="VUE | Christie's International Real Estate" width="163" height="22" loading="lazy" decoding="async"><p class="footer__copy">©2026 Mountain View Commons · All rights reserved</p></div>
+    <div class="footer__bottom"><img src="/assets/vue-dark.png" alt="VUE | Christie's International Real Estate" width="163" height="22" loading="lazy" decoding="async"><p class="footer__copy">©2026 Mountain View Commons</p></div>
     <div class="footer__legal"><p>©2026 Christie's International Real Estate. All rights reserved. This Christie's International Real Estate brokerage is independently owned and operated.</p><p>All renderings and illustrative maps are artist's conceptual renderings only and subject to change without notice. Property sizes, specifications, and layouts are approximate only and subject to change without notice. Prices are subject to change without notice.</p></div>
     <a class="footer__top-link" href="#" aria-label="Back to top">Back to top ↑</a>
 </footer>

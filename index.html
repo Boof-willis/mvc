@@ -38,7 +38,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/styles.css">
 
@@ -288,146 +288,13 @@
 </section>
 
 <!-- ================================================================
-     FILM / WALKTHROUGH
-     ================================================================ -->
-<section class="film" id="film" aria-labelledby="film-title">
-    <div class="film__inner">
-        <div class="film__header">
-            <h2 class="film__title reveal" id="film-title">See it in <span class="gold">motion.</span></h2>
-            <samp class="film__ref reveal">SEC-03 / WALKTHROUGH</samp>
-        </div>
-        <p class="film__sub reveal">
-            A cinematic tour of Mountain View Commons — the building, the drive-through garages, and the interior finishes of the Outlaw model unit.
-        </p>
-        <div class="film__stage reveal" id="filmStage" role="button" tabindex="0" aria-label="Play walkthrough video">
-            <img class="film__poster" src="/assets/photos/DJI_0697.webp" alt="Mountain View Commons aerial view — walkthrough video poster">
-            <video class="film__video"
-                   id="filmVideo"
-                   preload="none"
-                   playsinline
-                   controls
-                   poster="/assets/photos/DJI_0697.webp"
-                   src="https://assets.cdn.filesafe.space/jmi9G6HcIXtki2Y1JVCz/media/69e1367f8696a78b8d68dff6.mov"></video>
-            <div class="film__overlay">
-                <button class="film__play" type="button" aria-label="Play video">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                </button>
-            </div>
-            <div class="film__caption">
-                <samp>MVC / WALKTHROUGH</samp>
-                <samp>PRESS &gt; TO PLAY</samp>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ================================================================
-     FLOOR PLANS
-     ================================================================ -->
-<section class="plans" id="floor-plans" aria-labelledby="plans-title">
-    <div class="section-head">
-        <div class="section-head__inner">
-            <h2 class="section-head__title" id="plans-title">Four<br>Floor Plans</h2>
-            <samp class="section-head__ref">SEC-04 / 4 CONFIGURATIONS</samp>
-        </div>
-    </div>
-    <div class="plans__grid">
-        <article class="plan reveal">
-            <h3 class="plan__name">The Outlaw</h3>
-            <p class="plan__type">3 Bedroom · Model</p>
-            <ul class="plan__levels">
-                <li><span class="plan__lv">LV-03</span><span class="plan__desc">3 Beds · 2 Baths</span></li>
-                <li><span class="plan__lv">LV-02</span><span class="plan__desc">Kitchen · Dining · Living</span></li>
-                <li><span class="plan__lv">LV-01</span><span class="plan__desc">Garage · Bath</span></li>
-            </ul>
-            <a class="plan__cta" href="/floor-plans/the-outlaw/">View Plan</a>
-        </article>
-        <article class="plan reveal reveal-delay-1">
-            <h3 class="plan__name">The Frontier</h3>
-            <p class="plan__type">2 Bedroom</p>
-            <ul class="plan__levels">
-                <li><span class="plan__lv">LV-03</span><span class="plan__desc">2 Beds · 2 Baths · Kitchen</span></li>
-                <li><span class="plan__lv">LV-02</span><span class="plan__desc">Professional Spaces</span></li>
-                <li><span class="plan__lv">LV-01</span><span class="plan__desc">Garage · Bath</span></li>
-            </ul>
-            <a class="plan__cta" href="/floor-plans/the-frontier/">View Plan</a>
-        </article>
-        <article class="plan reveal reveal-delay-2">
-            <h3 class="plan__name">The Hideout</h3>
-            <p class="plan__type">1 Bedroom</p>
-            <ul class="plan__levels">
-                <li><span class="plan__lv">LV-03</span><span class="plan__desc">Bed · Bath · Kitchen · Living</span></li>
-                <li><span class="plan__lv">LV-02</span><span class="plan__desc">Office · Bath</span></li>
-                <li><span class="plan__lv">LV-01</span><span class="plan__desc">Garage</span></li>
-            </ul>
-            <a class="plan__cta" href="/floor-plans/the-hideout/">View Plan</a>
-        </article>
-        <article class="plan reveal reveal-delay-3">
-            <h3 class="plan__name">The Mercantile</h3>
-            <p class="plan__type">All Commercial</p>
-            <ul class="plan__levels">
-                <li><span class="plan__lv">LV-03</span><span class="plan__desc">Pro Space · Glass Office</span></li>
-                <li><span class="plan__lv">LV-02</span><span class="plan__desc">Open Floor · Bath</span></li>
-                <li><span class="plan__lv">LV-01</span><span class="plan__desc">Garage · Bath</span></li>
-            </ul>
-            <a class="plan__cta" href="/floor-plans/the-mercantile/">View Plan</a>
-        </article>
-    </div>
-</section>
-
-<!-- ================================================================
-     SPECS + PRICING
-     ================================================================ -->
-<section class="two-col" id="pricing" aria-labelledby="specs-title">
-    <h2 id="specs-title" class="visually-hidden" style="position:absolute;left:-9999px;">Unit Specifications and Pricing</h2>
-    <div class="two-col__grid">
-        <div class="two-col__col reveal">
-            <p class="two-col__label">[ Unit Specifications ]</p>
-            <div class="spec-row"><span class="spec-row__k">Total Area / Unit</span><span class="spec-row__v">~5,000 SF</span></div>
-            <div class="spec-row"><span class="spec-row__k">Stories</span><span class="spec-row__v">3</span></div>
-            <div class="spec-row"><span class="spec-row__k">Footprint per Floor</span><span class="spec-row__v">30' x 60'</span></div>
-            <div class="spec-row"><span class="spec-row__k">Ground Ceiling Height</span><span class="spec-row__v">20 FT</span></div>
-            <div class="spec-row"><span class="spec-row__k">Upper Ceiling Height</span><span class="spec-row__v">10 FT</span></div>
-            <div class="spec-row"><span class="spec-row__k">Garage Doors</span><span class="spec-row__v">16' Roll-Up · F+R</span></div>
-            <div class="spec-row"><span class="spec-row__k">Parking</span><span class="spec-row__v">~9 / Unit · 412 Total</span></div>
-            <div class="spec-row"><span class="spec-row__k">HOA</span><span class="spec-row__v">$446 / mo</span></div>
-            <div class="spec-row"><span class="spec-row__k">Total Units · Buildings</span><span class="spec-row__v">43 · 7</span></div>
-            <div class="spec-row"><span class="spec-row__k">Phasing</span><span class="spec-row__v">4 Phases</span></div>
-        </div>
-        <div class="two-col__col reveal reveal-delay-1">
-            <p class="two-col__label">[ Pricing ]</p>
-            <div class="pricing-row">
-                <p class="pricing-row__type">Interior Shell Units</p>
-                <p class="pricing-row__price">$1,050,000</p>
-                <p class="pricing-row__note">~$200 / SF · Customize with your contractor</p>
-            </div>
-            <div class="pricing-row">
-                <p class="pricing-row__type">End + Duplex Shell</p>
-                <p class="pricing-row__price">$1,250,000</p>
-                <p class="pricing-row__note">~$250 / SF · Larger lot, more glazing</p>
-            </div>
-            <div class="pricing-row">
-                <p class="pricing-row__type">Finished Packages (4)</p>
-                <p class="pricing-row__price">$1.95M – $2.42M</p>
-                <p class="pricing-row__note">~$400 / SF · Delivered turnkey with C of O</p>
-            </div>
-            <div class="pricing-row">
-                <p class="pricing-row__type">Phase 2 — Now Selling</p>
-                <p class="pricing-row__price">7 of 11 left</p>
-                <p class="pricing-row__note">Prices step up at each phase release</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ================================================================
      GALLERY PREVIEW
      ================================================================ -->
 <section class="bg-ink" aria-labelledby="gallery-title">
     <div class="section-head section-head--dark">
         <div class="section-head__inner">
             <h2 class="section-head__title" id="gallery-title">The<br>Property</h2>
-            <samp class="section-head__ref">SEC-05 / GALLERY</samp>
+            <samp class="section-head__ref">SEC-03 / GALLERY</samp>
         </div>
     </div>
     <div class="home-gallery">
@@ -486,53 +353,137 @@
     <div class="lightbox__cap"></div>
 </div>
 
+
+<!-- ================================================================
+     FLOOR PLANS
+     ================================================================ -->
+<section class="plans" id="floor-plans" aria-labelledby="plans-title">
+    <div class="section-head">
+        <div class="section-head__inner">
+            <h2 class="section-head__title" id="plans-title">Four<br>Floor Plans</h2>
+            <samp class="section-head__ref">SEC-04 / 4 CONFIGURATIONS</samp>
+        </div>
+    </div>
+    <div class="plans__grid">
+        <article class="plan reveal">
+            <img src="/assets/photos/DSC03787.webp" alt="Kitchen looking into living room" style="width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; margin-bottom: 16px;">
+            <h3 class="plan__name">The Outlaw</h3>
+            <p class="plan__type">3 Bedroom · Model</p>
+            <p class="plan__summary">The most residential plan. Three bedrooms upstairs, a full great room on the middle floor, and a drive-through garage below.</p>
+            <a class="plan__cta" href="/floor-plans/the-outlaw/">View Plan</a>
+        </article>
+        <article class="plan reveal reveal-delay-1">
+            <img src="/assets/renders/the-frontier-interior-render-1.webp" alt="The Frontier interior rendering" style="width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; margin-bottom: 16px;">
+            <h3 class="plan__name">The Frontier</h3>
+            <p class="plan__type">2 Bedroom</p>
+            <p class="plan__summary">The balanced plan. Two bedrooms, a dedicated professional office level, and full garage for toys and equipment.</p>
+            <a class="plan__cta" href="/floor-plans/the-frontier/">View Plan</a>
+        </article>
+        <article class="plan reveal reveal-delay-2">
+            <img src="/assets/renders/the-hideout-interior-render-1.webp" alt="The Hideout interior rendering" style="width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; margin-bottom: 16px;">
+            <h3 class="plan__name">The Hideout</h3>
+            <p class="plan__type">1 Bedroom</p>
+            <p class="plan__summary">Maximum garage, minimum residence. One-bedroom loft above dual offices and an oversized ground-floor garage.</p>
+            <a class="plan__cta" href="/floor-plans/the-hideout/">View Plan</a>
+        </article>
+        <article class="plan reveal reveal-delay-3">
+            <img src="/assets/renders/the-mercantile-interior-render-1.webp" alt="The Mercantile interior rendering" style="width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; margin-bottom: 16px;">
+            <h3 class="plan__name">The Mercantile</h3>
+            <p class="plan__type">All Commercial</p>
+            <p class="plan__summary">The all-commercial plan. Executive office level, open professional floor, and active warehouse garage.</p>
+            <a class="plan__cta" href="/floor-plans/the-mercantile/">View Plan</a>
+        </article>
+    </div>
+</section>
+
+<!-- ================================================================
+     FILM / WALKTHROUGH
+     ================================================================ -->
+<section class="film" id="film" aria-labelledby="film-title">
+    <div class="film__inner">
+        <div class="film__header">
+            <h2 class="film__title reveal" id="film-title">See it in <span class="gold">motion.</span></h2>
+            <samp class="film__ref reveal">SEC-05 / WALKTHROUGH</samp>
+        </div>
+        <p class="film__sub reveal">
+            A cinematic tour of Mountain View Commons — the building, the drive-through garages, and the interior finishes of the Outlaw model unit.
+        </p>
+        <div class="film__stage reveal" id="filmStage" role="button" tabindex="0" aria-label="Play walkthrough video">
+            <img class="film__poster" src="/assets/photos/DJI_0697.webp" alt="Mountain View Commons aerial view — walkthrough video poster">
+            <video class="film__video"
+                   id="filmVideo"
+                   preload="none"
+                   playsinline
+                   controls
+                   poster="/assets/photos/DJI_0697.webp"
+                   src="https://assets.cdn.filesafe.space/jmi9G6HcIXtki2Y1JVCz/media/69e1367f8696a78b8d68dff6.mov"></video>
+            <div class="film__overlay">
+                <button class="film__play" type="button" aria-label="Play video">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+            </div>
+            <div class="film__caption">
+                <samp>MVC / WALKTHROUGH</samp>
+                <samp>PRESS &gt; TO PLAY</samp>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- ================================================================
      LOCATOR MAP (aerial corridor)
      ================================================================ -->
-<section class="bg-ink section-block locator-map" aria-labelledby="locator-map-title">
+<section class="bg-paper section-block locator-map" aria-labelledby="locator-map-title" style="padding-bottom: 0; border-bottom: none;">
     <div class="section-block__inner">
         <div class="section-block__head">
             <p class="section-block__eyebrow">[ The Corridor ]</p>
-            <h2 class="section-block__title" id="locator-map-title" style="color:#fff">Two miles to the runway. Fifteen to Deer Valley.</h2>
-            <p class="section-block__deck">Mountain View Commons sits on the south end of Heber City — anchored on Hwy 40, half a mile east of Hwy 189. The aerial below shows the full Wasatch Back corridor looking north, with measured distances from the MVC site.</p>
+            <h2 class="section-block__title" id="locator-map-title">Two miles to the runway. Fifteen to Deer Valley.</h2>
+            <p class="section-block__deck">Mountain View Commons sits on the south end of Heber City — anchored on Hwy 40, half a mile east of Hwy 189. The aerial below shows the full Wasatch Back corridor looking west, with measured distances from the MVC site.</p>
         </div>
-        <figure class="locator-map__figure">
-            <picture>
-                <source media="(min-width: 1200px)" srcset="/assets/photos/mountain-view-commons-location-map-heber-valley-utah.webp" type="image/webp">
-                <source media="(min-width: 768px)" srcset="/assets/photos/mountain-view-commons-location-map-heber-valley-utah-1600.webp" type="image/webp">
-                <img src="/assets/photos/mountain-view-commons-location-map-heber-valley-utah-1200.webp"
-                     alt="Aerial map of Mountain View Commons in Heber City, Utah, looking north toward Salt Lake City. Labeled distances from the MVC site: Heber Valley Airport 2 miles, Deer Creek Reservoir 4 miles, Deer Valley Resort 14 miles, Jordanelle Reservoir 15 miles, Sundance Resort 16 miles, Park City Main Street 21 miles, Provo Airport 32 miles, Salt Lake City International Airport 54 miles."
-                     width="2400" height="1050"
-                     class="locator-map__img"
-                     loading="lazy"
-                     decoding="async">
-            </picture>
-            <figcaption class="locator-map__caption">
-                <span><strong>FIG-01</strong> · Aerial corridor — Heber Valley, UT · view looking north</span>
-                <span>Distances measured from MVC site</span>
-            </figcaption>
-        </figure>
-        <div class="locator-map__legend" aria-label="Distances from Mountain View Commons">
-            <div class="locator-map__legend-item">
-                <p class="locator-map__legend-key">[ Heber Valley Airport ]</p>
-                <p class="locator-map__legend-val"><span class="num">2</span><span class="unit">mi</span></p>
-            </div>
-            <div class="locator-map__legend-item">
-                <p class="locator-map__legend-key">[ Deer Valley Resort ]</p>
-                <p class="locator-map__legend-val"><span class="num">14</span><span class="unit">mi</span></p>
-            </div>
-            <div class="locator-map__legend-item">
-                <p class="locator-map__legend-key">[ Park City Main Street ]</p>
-                <p class="locator-map__legend-val"><span class="num">21</span><span class="unit">mi</span></p>
-            </div>
-            <div class="locator-map__legend-item">
-                <p class="locator-map__legend-key">[ SLC International ]</p>
-                <p class="locator-map__legend-val"><span class="num">54</span><span class="unit">mi</span></p>
-            </div>
+    </div>
+    
+    <figure class="locator-map__figure" style="border: none; position: relative;">
+        <picture>
+            <source media="(min-width: 1200px)" srcset="/assets/photos/mountain-view-commons-location-map-heber-valley-utah.webp" type="image/webp">
+            <source media="(min-width: 768px)" srcset="/assets/photos/mountain-view-commons-location-map-heber-valley-utah-1600.webp" type="image/webp">
+            <img src="/assets/photos/mountain-view-commons-location-map-heber-valley-utah-1200.webp"
+                 alt="Aerial map of Mountain View Commons in Heber City, Utah, looking west toward Salt Lake City. Labeled distances from the MVC site: Heber Valley Airport 2 miles, Deer Creek Reservoir 4 miles, Deer Valley Resort 14 miles, Jordanelle Reservoir 15 miles, Sundance Resort 16 miles, Park City Main Street 21 miles, Provo Airport 32 miles, Salt Lake City International Airport 54 miles."
+                 width="2400" height="1050"
+                 class="locator-map__img"
+                 style="display: block; width: 100%; height: auto;"
+                 loading="lazy"
+                 decoding="async">
+        </picture>
+        <figcaption class="locator-map__caption" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%); border: none; padding: 48px max(20px, calc((100vw - 1320px) / 2)) 20px max(20px, calc((100vw - 1320px) / 2)); color: rgba(255,255,255,0.85);">
+            <span style="display: inline-block; margin-bottom: 4px;"><strong style="color: var(--gold);">FIG-01</strong> · Aerial corridor — Heber Valley, UT · view looking west</span>
+            <span style="display: block; font-size: 9px; opacity: 0.7;">Distances measured from MVC site</span>
+        </figcaption>
+    </figure>
+
+    <div class="locator-map__legend" aria-label="Distances from Mountain View Commons" style="margin-top: 0; border: none; border-bottom: 1px solid rgba(0,0,0,0.1); display: grid; background: var(--ink);">
+        <div class="locator-map__legend-item" style="border-right: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 24px max(20px, calc((100vw - 1320px) / 2 / 4));">
+            <p class="locator-map__legend-key">[ Heber Valley Airport ]</p>
+            <p class="locator-map__legend-val"><span class="num">2</span><span class="unit">mi</span></p>
         </div>
-        <div class="btn-row" style="margin-top:32px">
+        <div class="locator-map__legend-item" style="border-right: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 24px 20px;">
+            <p class="locator-map__legend-key">[ Deer Valley Resort ]</p>
+            <p class="locator-map__legend-val"><span class="num">14</span><span class="unit">mi</span></p>
+        </div>
+        <div class="locator-map__legend-item" style="border-right: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 24px 20px;">
+            <p class="locator-map__legend-key">[ Park City Main Street ]</p>
+            <p class="locator-map__legend-val"><span class="num">21</span><span class="unit">mi</span></p>
+        </div>
+        <div class="locator-map__legend-item" style="border-bottom: 1px solid rgba(255,255,255,0.05); padding: 24px max(20px, calc((100vw - 1320px) / 2 / 4));">
+            <p class="locator-map__legend-key">[ SLC International ]</p>
+            <p class="locator-map__legend-val"><span class="num">54</span><span class="unit">mi</span></p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-paper section-block locator-map" style="padding-top: 0; border-top: none; display: none;">
+    <div class="section-block__inner" style="padding-top: 48px; padding-bottom: 56px;">
+        <div class="btn-row">
             <a href="/location/" class="btn btn--gold">Full Location Page</a>
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=Mountain+View+Commons+Heber+City+UT" target="_blank" rel="noopener noreferrer" class="btn btn--white">Open in Maps</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Mountain+View+Commons+Heber+City+UT" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">Open in Maps</a>
         </div>
     </div>
 </section>
@@ -709,7 +660,7 @@
     </div>
     <div class="footer__bottom">
         <img src="/assets/vue-dark.png" alt="VUE | Christie's International Real Estate" width="163" height="22" loading="lazy" decoding="async">
-        <p class="footer__copy">©2026 Mountain View Commons · All rights reserved</p>
+        <p class="footer__copy">©2026 Mountain View Commons</p>
     </div>
     <div class="footer__legal">
         <p>©2026 Christie's International Real Estate. All rights reserved. This Christie's International Real Estate brokerage is independently owned and operated. Christie's International Real Estate fully supports the principles of the Fair Housing Act and is an Equal Opportunity Employer. All listing information is from sources deemed reliable. However, no representation is made as to the accuracy or completeness thereof and should be independently verified.</p>
