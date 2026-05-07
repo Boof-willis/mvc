@@ -40,7 +40,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="/assets/styles.css?v=16">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -197,30 +197,33 @@
      ================================================================ -->
 <section class="home-hero">
     <div class="home-hero__bg">
-        <img src="/assets/photos/DJI_0697.webp" alt="Aerial view of Mountain View Commons mixed-use development in Heber City, Utah, with the Wasatch Range in the background" width="2048" height="1364" loading="eager" fetchpriority="high">
+        <video class="home-hero__video"
+               autoplay muted loop playsinline
+               preload="metadata"
+               poster="/assets/photos/DJI_0697.webp"
+               aria-hidden="true">
+            <source src="https://assets.cdn.filesafe.space/jmi9G6HcIXtki2Y1JVCz/media/69e1367f8696a78b8d68dff6.mov">
+        </video>
     </div>
     <div class="home-hero__content">
-        <div class="home-hero__id">[ MVC / HEBER CITY, UT / 40.4862N · 111.4136W ]</div>
-        <h1 class="home-hero__title">
-            LIVE<br>
-            WORK<br>
-            <span class="gold-line">PLAY</span>
-        </h1>
-        <p class="home-hero__deck">
-            43 mixed-use flex units in the Heber Valley. Roughly 5,000 square feet across three stories — residential above, commercial in the middle, drive-through garage below. One building. Yours to configure.
-        </p>
-        <div class="home-hero__meta">
-            <span class="home-hero__meta-item"><strong>~5,000</strong> SQ FT</span>
-            <span class="home-hero__meta-item"><strong>3</strong> STORIES</span>
-            <span class="home-hero__meta-item"><strong>4</strong> PLANS</span>
-            <span class="home-hero__meta-item"><strong>FROM&nbsp;$1.05M</strong></span>
-        </div>
-        <div class="btn-row">
-            <a href="/contact/" class="btn btn--gold">
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                Schedule a Tour
-            </a>
-            <a href="/floor-plans/" class="btn btn--white">&gt;&gt;&gt; See Floor Plans</a>
+        <div class="home-hero__lockup">
+            <div class="home-hero__id">
+                <span class="home-hero__id-item home-hero__id-item--d">Mixed-Use Flex Space</span>
+                <span class="home-hero__id-item home-hero__id-item--m">Flex Space</span>
+                <span class="home-hero__id-sep" aria-hidden="true">·</span>
+                <span class="home-hero__id-item home-hero__id-item--d">Luxury-Ready</span>
+                <span class="home-hero__id-item home-hero__id-item--m">Luxury Ready</span>
+                <span class="home-hero__id-sep" aria-hidden="true">·</span>
+                <span class="home-hero__id-item home-hero__id-item--d">Heber Valley, Utah</span>
+                <span class="home-hero__id-item home-hero__id-item--m">Heber, Utah</span>
+            </div>
+            <h1 class="home-hero__title">LIVE<span class="home-hero__sep">/</span>WORK<span class="home-hero__sep">/</span><span class="gold-line">PLAY</span></h1>
+            <div class="home-hero__cta">
+                <a href="/contact/" class="btn btn--gold">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Schedule a Tour
+                </a>
+            </div>
         </div>
     </div>
 </section>
