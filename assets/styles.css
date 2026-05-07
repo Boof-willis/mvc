@@ -802,18 +802,24 @@ body.menu-open .nav__toggle { visibility: hidden; }
 }
 .data-strip__inner {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 .data-strip__cell {
     background: var(--paper);
     padding: 22px 18px;
     transition: background 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    border-top: 1px solid var(--rule-light);
 }
-.data-strip__cell:first-child { border-top: none; }
+@media (max-width: 639px) {
+    .data-strip__cell {
+        border-top: 1px solid var(--rule-light);
+        border-left: 1px solid var(--rule-light);
+    }
+    .data-strip__cell:nth-child(-n+2) { border-top: none; }
+    .data-strip__cell:nth-child(odd) { border-left: none; }
+}
 @media (min-width: 640px) {
     .data-strip__inner { grid-template-columns: repeat(4, 1fr); }
-    .data-strip__cell { border-top: none; border-left: 1px solid var(--rule-light); }
+    .data-strip__cell { border-left: 1px solid var(--rule-light); }
     .data-strip__cell:first-child { border-left: none; }
 }
 .data-strip__cell:hover { background: var(--paper-mid); }
