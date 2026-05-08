@@ -8,6 +8,15 @@
 
     document.addEventListener('DOMContentLoaded', function () {
 
+        /* ---- Meta Pixel: phone-click event (hardcoded, independent of GTM) ---- */
+        document.addEventListener('click', function (e) {
+            var a = e.target && e.target.closest && e.target.closest('a[href^="tel:"]');
+            if (!a) return;
+            if (typeof window.fbq === 'function') {
+                window.fbq('track', 'Contact', { content_name: 'Phone Click' });
+            }
+        }, true);
+
         /* ---- Reveal on scroll ---- */
         var reveals = document.querySelectorAll('.reveal');
         if (reveals.length && 'IntersectionObserver' in window) {
@@ -248,6 +257,12 @@
                     form_id: contactForm.id || 'contact-form',
                     form_source: source
                 });
+                if (typeof window.fbq === 'function') {
+                    window.fbq('track', 'Lead', {
+                        content_name: 'Contact Form',
+                        content_category: 'Real Estate'
+                    });
+                }
 
                 var wrap = contactForm.parentNode;
                 var success = document.createElement('div');
