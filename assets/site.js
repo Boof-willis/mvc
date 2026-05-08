@@ -207,6 +207,14 @@
                     startFilm();
                 }
             });
+            filmVideo.addEventListener('play', function () {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'video_play',
+                    video_title: 'MVC Walkthrough',
+                    video_provider: 'self-hosted'
+                });
+            }, { once: true });
             filmVideo.addEventListener('pause', function () {
                 if (filmVideo.ended) filmStage.classList.remove('is-playing');
             });
@@ -234,6 +242,13 @@
             };
 
             var showSuccess = function () {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'form_submit_success',
+                    form_id: contactForm.id || 'contact-form',
+                    form_source: source
+                });
+
                 var wrap = contactForm.parentNode;
                 var success = document.createElement('div');
                 success.className = 'form__success';
