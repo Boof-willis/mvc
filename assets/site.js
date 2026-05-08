@@ -243,7 +243,7 @@
                     '<h3 class="section-block__title" style="margin-bottom:16px">Thanks — we\u2019ll be in touch.</h3>' +
                     '<p class="section-block__deck" style="margin-bottom:0">' +
                         'Your inquiry just landed with the on-site sales team. They typically respond within an hour during open house hours (Tues\u2013Fri 1\u20135 PM, Sat 11 AM\u20133 PM).<br><br>' +
-                        'For an immediate response, call <a href="tel:+14355033293" style="color:var(--gold-deep);border-bottom:1px solid rgba(201,168,76,0.5)">435.503.3293</a>.' +
+                        'For an immediate response, call <a href="tel:+14352222716" style="color:var(--gold-deep);border-bottom:1px solid rgba(201,168,76,0.5)">435.222.2716</a>.' +
                     '</p>';
                 contactForm.replaceWith(success);
                 success.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -297,7 +297,7 @@
                         submitBtn.textContent = 'Send Inquiry';
                     }
                     setStatus(
-                        'Something went wrong sending your inquiry. Please call 435.503.3293 or email jonathan.crosswhite@vuere.com directly.',
+                        'Something went wrong sending your inquiry. Please call 435.222.2716 or email jonathan.crosswhite@vuere.com directly.',
                         'error'
                     );
                 };
