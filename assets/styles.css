@@ -1769,7 +1769,7 @@ body.menu-open .nav__toggle { visibility: hidden; }
 }
 .persona__body { font-size: 14px; line-height: 1.75; color: var(--ink-mid); }
 
-/* Use-case feature block (AV company) */
+/* Use-case feature block (HVAC tool company) */
 .use-case {
     background: var(--ink);
     color: #fff;
